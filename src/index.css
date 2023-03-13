@@ -1,0 +1,19 @@
+:root {
+  --white: #ffff;
+  --black: #111;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: monospace, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}

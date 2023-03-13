@@ -1,0 +1,199 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.typewriter {
+  font-size: 5rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 5rem;
+  color: var(--white);
+}
+
+img {
+  height: 200px;
+  margin: 1.5rem 0;
+}
+
+button {
+  padding: 1rem;
+  background-color: transparent;
+  outline-color: transparent;
+  border: 2px solid var(--white);
+  width: 120px;
+  cursor: pointer;
+  color: var(--white);
+}
+
+input {
+  padding: 1rem;
+  font-size: 1.5rem;
+  outline-color: transparent;
+  background-color: transparent;
+  border: 2px solid var(--white);
+  margin: 2rem 0;
+  color: var(--white);
+}
+
+.loading_img_wrapper {
+  height: 200px;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_img {
+  font-size: 200px;
+}
+
+.search_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search_btn {
+  font-size: 1.5rem;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.search_btn:hover {
+  color: #111;
+}
+
+.search_btn::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  background-color: var(--white);
+  transition: all 0.2s ease;
+  z-index: -1;
+}
+
+.search_btn:hover::before {
+  width: 100%;
+}
+
+.search_btn:hover .search_btn_arrow {
+  animation-name: arrowRight;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.85);
+}
+
+.back_btn:hover .arrowLeft {
+  animation-name: arrowLeft;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.85);
+  transition: all 0.2s ease;
+}
+
+.next_btn:hover .arrowRight {
+  animation-name: arrowRight;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.85);
+}
+
+.back_btn {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.next_btn {
+  border-radius: 0 1rem 1rem 0;
+}
+
+@keyframes arrowLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes arrowRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(10px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .typewriter {
+    font-size: 3.5rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .search_btn {
+    transition: none;
+  }
+
+  .search_btn::before,
+  .search_btn:hover::before {
+    display: none;
+  }
+
+  .search_btn:hover {
+    color: var(--white);
+  }
+
+  .search_btn:active {
+    color: #111;
+    background-color: var(--white);
+  }
+
+  .search_btn:hover .search_btn_arrow .back_btn:hover .arrowLeft,
+  .next_btn:hover .arrowRight {
+    animation: none;
+  }
+
+  .back_btn:active .arrowLeft {
+    animation-name: arrowLeft;
+    animation-duration: 0.2s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  .next_btn:active .arrowRight {
+    animation-name: arrowRight;
+    animation-duration: 0.2s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  img {
+    margin: 3rem 0;
+  }
+
+  .loading_img_wrapper {
+    margin: 3rem 0;
+  }
+}
