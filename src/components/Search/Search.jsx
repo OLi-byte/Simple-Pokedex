@@ -39,23 +39,37 @@ const Search = () => {
     <div className={styles.container}>
       {!loading ? (
         <>
-          <div className={styles.typewriter}>
+          <div
+            className={styles.typewriter}
+            style={
+              String(pokemon.name).length > 10
+                ? { fontSize: 3 + "rem", marginBottom: 2.39 + "rem" }
+                : { fontSize: 5 + "rem" }
+            }
+          >
             <TypewriterComponent
               onInit={(typewriter) => {
                 typewriter
                   .typeString(String(pokemon.name).toLocaleUpperCase())
-                  .pauseFor(10)
                   .start();
               }}
             />
           </div>
-          <img src={pokemon.sprites?.other.dream_world.front_default} />
+          <img
+            className={styles.pokemon_sprite}
+            src={
+              pokemon.sprites?.other.dream_world.front_default
+                ? pokemon.sprites?.other.dream_world.front_default
+                : pokemon.sprites?.other.home.front_default
+            }
+            alt="pokemon-sprite"
+          />
         </>
       ) : (
         <>
-          <h1>LOADING...</h1>
-          <div className={styles.loading_img_wrapper}>
-            <h1 className={styles.loading_img}>?</h1>
+          <h1 className={styles.loading_title}>LOADING...</h1>
+          <div className={styles.loading_icon_wrapper}>
+            <h1 className={styles.loading_icon}>?</h1>
           </div>
         </>
       )}
@@ -64,19 +78,20 @@ const Search = () => {
           <button
             className={styles.back_btn}
             onClick={() =>
-              pokemon.id > 1 ? setPokemonIndex(pokemon.id - 1) : none
+              pokemon.id > 1 ? setPokemonIndex((pokemon.id -= 1)) : none
             }
           >
             <FiArrowLeft size={32} className={styles.arrowLeft} />
           </button>
           <button
             className={styles.next_btn}
-            onClick={() => setPokemonIndex(pokemon.id + 1)}
+            onClick={() => setPokemonIndex((pokemon.id += 1))}
           >
             <FiArrowRight size={32} className={styles.arrowRight} />
           </button>
         </div>
         <input
+          className={styles.search_input}
           placeholder={`Index atual: ${pokemon.id}`}
           onChange={(e) => setInputData(e.target.value)}
           value={inputData}

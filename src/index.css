@@ -12,6 +12,11 @@
 
 body {
   background-color: var(--black);
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
 }
 
 html {
