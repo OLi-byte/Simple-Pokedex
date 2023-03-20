@@ -53,6 +53,7 @@
   width: 120px;
   cursor: pointer;
   color: var(--white);
+  animation: slideLeft_2 1s forwards;
 }
 
 .back_btn {
@@ -71,6 +72,8 @@
   border: 2px solid var(--white);
   margin: 2rem 0;
   color: var(--white);
+  animation: slideLeft_2 1s forwards 0.5s;
+  transform: translateX(-1000px);
 }
 
 .search_btn {
@@ -87,6 +90,8 @@
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  transform: translateX(-1000px);
+  animation: slideLeft_2 1s forwards 1s;
 }
 
 .search_btn:hover {
@@ -149,6 +154,15 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes slideLeft_2 {
+  0% {
+      transform: translateX(-1000px);
+  }
+  100% {
+      transform: translateX(0);
   }
 }
 

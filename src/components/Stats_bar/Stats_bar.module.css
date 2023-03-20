@@ -1,0 +1,27 @@
+:root {
+  --green: rgb(23, 255, 178);
+  --grey: rgb(67, 68, 70);
+}
+
+.stats_bar_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat_bar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  position: relative;
+  background-color: var(--black);
+}
+
+.stats_row {
+  width: 100%;
+  height: 5px;
+}
