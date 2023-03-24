@@ -1,8 +1,3 @@
-:root {
-  --green: rgb(23, 255, 178);
-  --grey: rgb(67, 68, 70);
-}
-
 .stats_bar_wrapper {
   display: flex;
   align-items: center;
