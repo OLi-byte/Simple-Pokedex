@@ -18,7 +18,6 @@ const Search = ({ setPokemonData, setLoadingStatus }) => {
       .then((response) => {
         setPokemon(response.data);
         setPokemonData(response.data);
-        console.log(response.data)
       })
       .catch((err) => {
         console.log(err);

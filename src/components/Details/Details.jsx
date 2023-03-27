@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Details.module.css";
 import TypewriterComponent from "typewriter-effect";
 import { FaRuler, FaWeightHanging } from "react-icons/fa";
 import Stats_bar from "../Stats_bar/Stats_bar";
 import * as Popover from "@radix-ui/react-popover";
-import { RiSwordFill } from 'react-icons/ri'
+import { RiSwordFill } from "react-icons/ri";
 
 const Details = ({ pokemonData, loadingStatus }) => {
   const colours = {
@@ -85,14 +85,24 @@ const Details = ({ pokemonData, loadingStatus }) => {
           <div className={styles.characteristics_wrapper}>
             <ul className={styles.measurements}>
               <li>
-                <FaRuler size={50} /> <span>{pokemonData.height}</span>
+                <FaRuler size={50} />
+                {pokemonData.height * 10 >= 100 ? (
+                  <span>{pokemonData.height / 10}m</span>
+                ) : (
+                  <span>{pokemonData.height * 10}cm</span>
+                )}
               </li>
               <li>
-                <FaWeightHanging size={40} /> <span>{pokemonData.weight}</span>
+                <FaWeightHanging size={40} />
+                <span>{pokemonData.weight / 10}Kg</span>
               </li>
             </ul>
             <img
-              src={pokemonData.sprites?.other.dream_world.front_default}
+              src={
+                pokemonData.sprites?.other.dream_world.front_default
+                  ? pokemonData.sprites?.other.dream_world.front_default
+                  : pokemonData.sprites?.other.home.front_default
+              }
               height={200}
             />
             <div className={styles.types_container}>
@@ -120,22 +130,22 @@ const Details = ({ pokemonData, loadingStatus }) => {
             </div>
           </div>
           <div className={styles.abilities}>
-              <span>Abilities: </span>
-              {
-                pokemonData.abilities?.map((ability, index) => {
-                  return (
-                    <ul key={index}>
-                      <li><RiSwordFill /> {ability.ability.name}</li>
-                    </ul>
-                  )
-                })
-              }
+            <span>Abilities: </span>
+            {pokemonData.abilities?.map((ability, index) => {
+              return (
+                <ul key={index}>
+                  <li>
+                    <RiSwordFill /> {ability.ability.name}
+                  </li>
+                </ul>
+              );
+            })}
           </div>
-            <div className={styles.stats_bars_container}>
-              {pokemonData.stats?.map((stats, index) => {
-                return <Stats_bar stats={stats} key={index} />;
-              })}
-            </div>
+          <div className={styles.stats_bars_container}>
+            {pokemonData.stats?.map((stats, index) => {
+              return <Stats_bar stats={stats} key={index} />;
+            })}
+          </div>
         </div>
       )}
     </div>
