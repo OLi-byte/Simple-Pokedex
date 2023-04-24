@@ -104,6 +104,7 @@ const Details = ({ pokemonData, loadingStatus }) => {
                   : pokemonData.sprites?.other.home.front_default
               }
               height={200}
+              className={styles.pokemon_sprite}
             />
             <div className={styles.types_container}>
               <span>Types</span>
@@ -143,7 +144,13 @@ const Details = ({ pokemonData, loadingStatus }) => {
           </div>
           <div className={styles.stats_bars_container}>
             {pokemonData.stats?.map((stats, index) => {
-              return <Stats_bar stats={stats} key={index} />;
+              return (
+                <Stats_bar
+                  stats={stats}
+                  key={index}
+                  color={colours[`${pokemonData.types[0].type.name}`]}
+                />
+              );
             })}
           </div>
         </div>

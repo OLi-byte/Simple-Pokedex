@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Stats_bar.module.css";
 
-const Stats_bar = ({ stats }) => {
+const Stats_bar = ({ stats, color }) => {
   return (
     <div className={styles.stats_bar_wrapper}>
       <span>{stats.base_stat}</span>
@@ -19,7 +19,7 @@ const Stats_bar = ({ stats }) => {
             return (
               <li
                 key={index}
-                style={{ backgroundColor: 'rgb(23, 255, 178)'}}
+                style={{ backgroundColor: color}}
                 className={styles.stats_row}
               ></li>
             );

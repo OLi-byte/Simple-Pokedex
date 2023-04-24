@@ -4,7 +4,7 @@ import { api } from "../../services/api";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import TypewriterComponent from "typewriter-effect";
 
-const Search = ({ setPokemonData, setLoadingStatus }) => {
+const Search = ({ setPokemonData, setLoadingStatus, setError }) => {
   const [pokemon, setPokemon] = useState("");
   const [pokemonIndex, setPokemonIndex] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -20,6 +20,7 @@ const Search = ({ setPokemonData, setLoadingStatus }) => {
         setPokemonData(response.data);
       })
       .catch((err) => {
+        setError(true);
         console.log(err);
       })
       .finally(() => {
