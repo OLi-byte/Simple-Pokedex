@@ -1,6 +1,131 @@
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list_page_container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu_icon {
+  position: fixed;
+  background-color: var(--black);
+  z-index: 1;
+  left: 2vw;
+  bottom: 3vh;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 2px solid var(--white);
+  border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+
+.menu_icon:hover {
+  box-shadow: rgba(240, 224, 224, 0.35) 0px 5px 15px;
+  transform: scale(1.1);
+}
+
+.sidebar_container {
+  max-width: 372px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--black);
+  border-right: solid 2px var(--white);
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  animation: slide-left 0.2s forwards;
+}
+
+.sidebar_container svg {
+  display: flex;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.menu_project_card {
+  max-width: 400px;
+  cursor: pointer;
+  height: 248px;
+  background-color: var(--white);
+  border: solid 2px #ffffff;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(240, 224, 224, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.image_container {
+  width: 100%;
+}
+
+.menu_title {
+  color: var(--white);
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.print_project_card {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem 1rem 0 0;
+  border-bottom: 1px solid var(--grey);
+}
+
+.card_content {
+  padding: 0.5rem;
+}
+
+.owner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: var(--white);
+  gap: 0.5rem;
+}
+
+.sidebar_container i {
+  width: 100%;
+  background-color: var(--white);
+  margin: 1.4rem 0;
+  height: 2px;
+}
+
+.menu_content {
+  color: var(--white);
+  font-size: 16px;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 1050px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+    gap: 3rem;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
 }
