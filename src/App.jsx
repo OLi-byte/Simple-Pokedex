@@ -61,7 +61,7 @@ function App() {
                   typewriter
                     .changeDelay(10)
                     .typeString(
-                      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam sed odio, cupiditate corporis sit laborum ab animi ipsum molestiae amet molestias aut alias atque consequatur! Nam laborum non fugiat error? ;)"
+                      "Essa é uma pokedex com um design um pouco diferente e cheia de animações, aqui você pode fazer buscas simples pelo nome e id de cada pokemon e ver suas informações ao lado, se quiser dar uma confirida no site do projeto, basta clicar no card :)"
                     )
                     .start();
                 }}
