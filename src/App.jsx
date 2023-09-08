@@ -32,7 +32,7 @@ function App() {
             />
             <h1 className={styles.menu_title}>SIMPLE POKEDEX</h1>
             <div className={styles.menu_project_card}>
-              <a href="https://oli-byte.github.io/Simple-Pokedex">
+              <a href="https://github.com/OLi-byte/Simple-Pokedex">
                 <img
                   className={styles.print_project_card}
                   src={print_project_card}
@@ -43,7 +43,7 @@ function App() {
                     onInit={(typewriter) => {
                       typewriter
                         .changeDelay(10)
-                        .typeString("https://oli-byte.github.io/Simple-Pokedex")
+                        .typeString("https://github.com/OLi-byte/Simple-Pokedex")
                         .start();
                     }}
                   />
